@@ -1,0 +1,129 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fdf2f8;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* Scroll-triggered fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes pulsePink {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 14px rgba(236, 72, 153, 0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.animate-fade-left {
+  animation: fadeInLeft 0.7s ease-out forwards;
+}
+
+.animate-fade-right {
+  animation: fadeInRight 0.7s ease-out forwards;
+}
+
+.animate-float {
+  animation: floatBob 3s ease-in-out infinite;
+}
+
+.animate-pulse-pink {
+  animation: pulsePink 2s ease-in-out infinite;
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.visible {
+  opacity: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #fdf2f8;
+}
+::-webkit-scrollbar-thumb {
+  background: #f9a8d4;
+  border-radius: 9999px;
+}
+
+@keyframes splashIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-splash-in {
+  animation: splashIn 0.6s ease-out forwards;
+}
+
+/* Hide native Edge password reveal button */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
